@@ -31,7 +31,35 @@ Methods:
 
 ```js
 class Stack {
-  // your code goes here
+constructor(max) {
+    this.data = [];
+    this.max = max;
+  }
+
+  get length() {
+    return this.data.length;
+  }
+
+  isEmpty() {
+    console.log(this.data);
+    return !this.data.length;
+  }
+
+  add(n) {
+    if (this.data.length === this.max) {
+      alert("Stack is overflowing");
+      return;
+    }
+
+    this.data.push(n);
+    return this.data.length;
+  }
+  remove() {
+    return this.data.pop();
+  }
+  peek() {
+    return this.data[this.data.length - 1];
+  }
 }
 
 // Test 1
